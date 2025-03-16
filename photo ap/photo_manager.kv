@@ -1,0 +1,15 @@
+<PhotoManager>:
+    file_chooser: filechooser_id
+    photo_display: photodisplay_id
+    BoxLayout:
+        orientation: 'vertical'
+        FileChooserIconView:
+            id: filechooser_id
+            on_selection: root.display_photos(filechooser_id, filechooser_id.selection)
+        Button:
+            text: "Sort Photos by Size"
+            on_press: root.sort_photos(self)
+        BoxLayout:
+            id: photodisplay_id
+            size_hint_y: None
+            height: 500
